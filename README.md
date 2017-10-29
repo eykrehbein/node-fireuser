@@ -66,7 +66,7 @@ fireuser.database.createUser(authID, {
     fullname: rqFullname
 });
 ```
-### ***getUserById(authID)***
+### getUserById(authID)
 If you want to retrieve the data of a special user, you can use this function. As parameter, it takes the authID of the user. The function is a promise which returns an object.
 ```javascript
 fireuser.database.getUserById(authID).then(res => {
@@ -77,9 +77,9 @@ fireuser.database.getUserById(authID).then(res => {
 });
 ```
 Returns *null* when no user was found.
-### ***getUsersById([authID1, authID2])***
+### getUsersById([authID1, authID2])
 coming soon...
-### ***changeUserData(authID,options)***
+### changeUserData(authID,options)
 Use this command to change data of an existing user. Parameters are the Firebase AuthID and the options object.
 ```javascript
 fireuser.database.changeUserData(authID, {
@@ -89,7 +89,7 @@ fireuser.database.changeUserData(authID, {
 });
 ```
 Creates a new user when no user was found.
-### ***watchUserChanges(authID,throwbackFunction)***
+### watchUserChanges(authID,throwbackFunction)
 If you want to watch changes of the user data live and interact with it, use this function. You need the Firebase AuthID and a throwback function.
 ```javascript
 fireuser.database.watchUserChanges(authID, newData => f(newData));
@@ -99,14 +99,14 @@ function tb(newData){
     console.log(newData.username);
 }
 ```
-### ***removeUser(authID)***
+### removeUser(authID)
 Removes a user from the database
 ```javascript
 if(fireuser.database.removeUser(authID)){
     // user removed
 }
 ```
-### ***getUserNumber()***
+### getUserNumber()
 Returns (a promise of) the total amount of users in the databse
 ```javascript
 fireuser.database.getUserNumber().then(number => console.log(number.toString()));
