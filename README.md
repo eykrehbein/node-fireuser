@@ -48,7 +48,7 @@ const serviceWorker = require('path/to/your/json/file');
 ```
 
 ## Realtime Database Commands
-### ***createUser(authID, options)***
+### createUser(authID, options)
 You'll need this command every time, you want to create a new user in the database. It uses the parameter *authID* and *options* . For *authID* you should use the Firebase Authentication ID of the user. *options* is an object where you can enter every data the user should have in the database.
 ```javascript
 // Basic syntax
