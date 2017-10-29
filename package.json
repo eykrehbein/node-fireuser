@@ -1,0 +1,27 @@
+{
+  "name": "node-fireuser",
+  "version": "0.0.1",
+  "description": "A user-management system for Firebase Realtime Database and Firestore",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eykjs/node-fireuser.git"
+  },
+  "keywords": [
+    "fireuser",
+    "firebase",
+    "firestore",
+    "database",
+    "library",
+    "nodejs"
+  ],
+  "author": "Eyk Rehbein <eykjs@gmail.com> (https://twitter.com/eykjs)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eykjs/node-fireuser/issues"
+  },
+  "homepage": "https://github.com/eykjs/node-fireuser#readme"
+}
