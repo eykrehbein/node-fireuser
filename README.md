@@ -106,7 +106,7 @@ if(fireuser.database.removeUser(authID)){
     // user removed
 }
 ```
-### getUserNumber()
+### countUsers()
 Returns (a promise of) the total amount of users in the databse
 ```javascript
 fireuser.database.getUserNumber().then(number => console.log(number.toString()));
