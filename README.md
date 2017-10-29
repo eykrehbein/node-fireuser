@@ -46,7 +46,6 @@ const fireuser = require('node-fireuser')
 const admin = require('firebase-admin')
 const serviceWorker = require('path/to/your/json/file');
 ...
-}
 ```
 
 ## Realtime Database Commands
@@ -78,7 +77,8 @@ fireuser.database.getUserById(authID).then(res => {
     console.log("The email address is: " + email);
 });
 ```
-### ***getUserById([authID1, authID2])***
+Returns *null* when no user was found.
+### ***getUsersById([authID1, authID2])***
 coming soon...
 ### ***changeUserData(authID,options)***
 Use this command to change data of an existing user. Parameters are the Firebase AuthID and the options object.
@@ -89,6 +89,7 @@ fireuser.database.changeUserData(authID, {
     newElement: newElement
 });
 ```
+Creates a new user when no user was found.
 ### ***watchUserChanges(authID,throwbackFunction)***
 If you want to watch changes of the user data live and interact with it, use this function. You need the Firebase AuthID and a throwback function.
 ```javascript
