@@ -1,5 +1,8 @@
 # node-fireuser
-This is a library for easy user management with Firebase Realtime Database and Firestore. The library creates a tree in your Database in which the user information gets saved and edited. The tree is build on a very simple way so even if you wouldn't use the library to access the data, you would understand it. ( But you will never need to because the library has everything included to create, edit , view and delete users )
+This is a library for easy user management with Firebase Realtime Database and Firestore. Advantages of the Firestore library: 
+ * You can search users by their saved properties
+ * Firestore will be more popular someday than RT Database
+
 ## Installation and Initialization
 
 Install the library easily with npm. 
@@ -162,6 +165,5 @@ let value = "Mark Zuckerberg";
 fireuser.store.searchUser(entry, attribute, value).then(res => {
     // returns the data of a user with the username "Mark Zuckerberg"
     console.log(res.email);
-
 });
 ```
