@@ -77,8 +77,6 @@ fireuser.database.getUserById(authID).then(res => {
 });
 ```
 Returns *null* when no user was found.
-### getUsersById([authID1, authID2])
-coming soon...
 ### changeUserData(authID,options)
 Use this command to change data of an existing user. Parameters are the Firebase AuthID and the options object.
 ```javascript
@@ -89,7 +87,7 @@ fireuser.database.changeUserData(authID, {
 });
 ```
 Creates a new user when no user was found.
-### watchUserChanges(authID,throwbackFunction)
+### watchUserChanges(authID,callbackFunction)
 If you want to watch changes of the user data live and interact with it, use this function. You need the Firebase AuthID and a throwback function.
 ```javascript
 fireuser.database.watchUserChanges(authID, newData => f(newData));
@@ -109,8 +107,61 @@ if(fireuser.database.removeUser(authID)){
 ### countUsers()
 Returns (a promise of) the total amount of users in the databse
 ```javascript
-fireuser.database.getUserNumber().then(number => console.log(number.toString()));
+fireuser.database.countUsers().then(number => console.log(number.toString()));
 ```
 
 ## Firestore Commands
-... under construction
+For more information about the usage look above to the Realtime Databse section.
+
+### createUser(authID, options)
+```javascript
+fireuser.store.createUser(authID, {
+    username: "Mark Zuckerberg",
+    email: "zuckerberg@fb.com"
+})
+```
+### getUserById(authID)
+```javascript   
+fireuser.store.getUserById(authID).then( data => {
+
+// returns the username
+console.log(data.username);
+})
+```
+### changeUserData(authID, options)
+```javascript
+let newUsername = "David Main";
+fireuser.store.changeUserData(authId, {
+    username: newUsername
+});
+```
+If there is no user, this will create one.
+### watchUserChanges(authID, callbackFunction)
+```javascript
+fireuser.store.watchUserChanges(authID, data => callback(data));
+
+function callback(data){
+    console.log("Changed username: " + data.username);
+}
+```
+### removeUser(authID)
+```javascript
+fireuser.store.removeUser(authID);
+```
+### countUsers()
+```javascript
+fireuser.store.countUsers().then(number => console.log("Users:" + number.toString()));
+```
+### searchUser(entry, attribute, value)
+Search users by values
+```javascript
+let entry = "username";
+let attribute = "==";
+let value = "Mark Zuckerberg";
+
+fireuser.store.searchUser(entry, attribute, value).then(res => {
+    // returns the data of a user with the username "Mark Zuckerberg"
+    console.log(res.email);
+
+});
+```
