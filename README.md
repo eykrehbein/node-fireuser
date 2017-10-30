@@ -5,13 +5,13 @@ This is a library for easy user management with Firebase Realtime Database and F
 
 ## Installation and Initialization
 
-Install the library easily with npm. 
+Install the library easily with npm. *Please use node-fireuser@1.0.0 for the moment*
 ```
-npm install node-fireuser 
+npm install node-fireuser@1.0.0 --save
 ```
 You'll also need the Firebase-admin SDK for this library. Just install it aswell with npm.
 ```
-npm install firebase-admin
+npm install firebase-admin --save
 ```
 
 
